@@ -19,7 +19,7 @@ p { margin: 0; }
 .wrap { max-width: 1180px; margin: 0 auto; padding-inline: 20px; }
 
 /* En-tête */
-.site-header { background: #fff; border-bottom: 1px solid var(--line); position: relative; z-index: 3; }
+.site-header { background: #fff; border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 30; }
 .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; padding-block: 10px; }
 .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--ink); }
 .brand-mark { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 11px; background: linear-gradient(135deg, #2563eb, #1d4ed8); color: #fff; font-weight: 800; font-size: 13px; box-shadow: 0 4px 12px rgba(37, 99, 235, .3); }

@@ -169,7 +169,21 @@ footer a{color:var(--mut)}
 }
 @page{size:A4 landscape;margin:0}
 
-.site-header{background:#fff;border-bottom:1px solid var(--line);position:relative;z-index:3}
+.site-header{position:sticky;top:0}
+nav.side{top:78px}
+html{scroll-padding-top:80px}
+.nextbox{margin-top:26px;display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;background:linear-gradient(135deg,#1f2a37 0%,#24365a 55%,#2563eb 100%);color:#fff;border-radius:14px;padding:18px 22px}
+.nextbox b{display:block;font-size:20px}.nextbox span{opacity:.85}
+.nb-btns{display:flex;gap:10px;flex-wrap:wrap}
+.nb{background:#fff;color:#1f2a37;text-decoration:none;font-weight:700;padding:10px 18px;border-radius:10px}
+.nb.ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.55)}
+.nb:hover{filter:brightness(.95)}
+#toTop{position:fixed;right:20px;bottom:20px;width:46px;height:46px;border-radius:50%;border:0;background:#2563eb;color:#fff;font-size:20px;cursor:pointer;box-shadow:0 6px 18px rgba(37,99,235,.4);opacity:0;pointer-events:none;transition:opacity .2s;z-index:20}
+#toTop.show{opacity:1;pointer-events:auto}
+@media print{#toTop,.nextbox,.site-header{display:none!important}}
+
+
+.site-header{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:30}
 .header-inner{max-width:1180px;margin:0 auto;padding:10px 20px;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink)}
 .brand-mark{display:grid;place-items:center;width:40px;height:40px;border-radius:11px;background:linear-gradient(135deg,#2563eb,#1d4ed8);color:#fff;font-weight:800;font-size:13px;box-shadow:0 4px 12px rgba(37,99,235,.3)}
@@ -334,6 +348,7 @@ footer a{color:var(--mut)}
 <details><summary>L’outil Arête ne surligne rien</summary>Approchez le curseur plus près de l’arête, zoomez, ou activez Contours.</details>
 <details><summary>L’ordinateur rame</summary>Masquez Mobilier, Fenêtres et Portes dans l’arborescence.</details>
 </div>
+<div class="nextbox" id="nextbox"><div><b>Étape suivante</b><span>Vous avez terminé le tuto ? Passez au TP.</span></div><div class="nb-btns"><a class="nb ghost" data-lien="sujet" href="#">2 · Lire la consigne</a><a class="nb" data-lien="outil" href="#">3 · Ouvrir l’outil →</a></div></div>
 </section>
 </main>
 </div>
@@ -345,6 +360,7 @@ footer a{color:var(--mut)}
 <label>Code de vérification<input id="vCode" placeholder="XXXX-XXXX"></label>
 <div style="display:flex;gap:8px;margin-top:10px"><button class="check" id="vGo">Vérifier</button><button class="opt" id="vClose">Fermer</button></div><div id="vRes"></div></div></div>
 <div id="lb"><img alt=""></div>
+<button id="toTop" title="Revenir en haut" aria-label="Revenir en haut">↑</button>
 <script>
 (function(){
   // téléchargements
@@ -357,6 +373,12 @@ footer a{color:var(--mut)}
   if(location.protocol.startsWith('http')) document.querySelectorAll('[data-site]').forEach(e=>e.style.display='');
   else document.querySelectorAll('a.brand[data-site]').forEach(a=>a.removeAttribute('href'));
   if(location.protocol.startsWith('http')) document.querySelectorAll('.online-only').forEach(e=>e.style.display='block');
+
+  // étape suivante + retour en haut
+  document.querySelectorAll('[data-lien]').forEach(a=>{const u=LIENS[a.dataset.lien]; if(u) a.href=u; else a.style.display='none';});
+  if(!LIENS.sujet && !LIENS.outil){const nb=document.getElementById('nextbox'); if(nb) nb.style.display='none';}
+  const tt=document.getElementById('toTop'); tt.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+  window.addEventListener('scroll',()=>tt.classList.toggle('show',window.scrollY>800),{passive:true});
   // stockage
   const KEY='lkbim-tuto-v1'; let st={};
   try{st=JSON.parse(localStorage.getItem(KEY)||'{}');}catch(e){}
