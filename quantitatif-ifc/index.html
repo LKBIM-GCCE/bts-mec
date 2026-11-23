@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>TP · Réaliser un quantitatif à partir d’un IFC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../assets/style.css?v=82925d70">
+<style>
+.steps4{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr));gap:1rem}
+.step4{display:flex;flex-direction:column;gap:.5rem;background:var(--sheet);border:2px solid var(--ink);padding:1rem 1.1rem;text-decoration:none;position:relative;box-shadow:5px 5px 0 var(--line)}
+.step4:hover{box-shadow:7px 7px 0 var(--line-strong);transform:translate(-1px,-1px)}
+.step4 .n{font-family:var(--font-mono);font-size:.8rem;color:var(--ink-soft)}
+.step4 .t{font-family:var(--font-display);font-size:1.6rem;font-weight:700;line-height:1.05}
+.step4 .d{font-size:.95rem;color:var(--ink-soft)}
+.step4 .go{margin-top:auto;font-weight:600;color:var(--u21)}
+.step4.is-key{background:var(--u21-tint)}
+.lots{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr));gap:1rem}
+.lot-card{background:var(--sheet);border:1px solid var(--line);border-top:4px solid var(--u21);padding:1rem 1.1rem}
+.lot-card:nth-child(2){border-top-color:var(--u22)}.lot-card:nth-child(3){border-top-color:var(--u23)}
+.lot-card h3{margin-bottom:.5rem}
+.horaire{width:100%;border-collapse:collapse;background:var(--sheet)}
+.horaire td{border-bottom:1px solid var(--line);padding:.55rem .7rem;vertical-align:top}
+.horaire td:first-child{font-family:var(--font-mono);white-space:nowrap;width:1%}
+.horaire td:nth-child(2){font-weight:600;white-space:nowrap}
+.alert{border-left:5px solid var(--u23);background:var(--u23-tint);padding:.8rem 1rem}
+.dl-list{list-style:none;padding:0;margin:0;display:grid;gap:.6rem}
+.dl-list a{display:flex;gap:.8rem;align-items:center;text-decoration:none;background:var(--sheet);border:1px solid var(--line);padding:.6rem .8rem}
+.dl-list a:hover{border-color:var(--ink)}
+.dl-list .ext{font-family:var(--font-mono);font-size:.75rem;font-weight:600;color:#fff;background:var(--ink);padding:.2rem .45rem;min-width:3.2rem;text-align:center}
+.dl-list small{display:block;color:var(--ink-soft)}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="../index.html" class="brand">
+      <span class="brand-mark" aria-hidden="true">MEC</span>
+      <span class="brand-text"><strong>BTS MEC</strong><span>Management économique de la construction</span></span>
+    </a>
+    <nav class="nav" aria-label="Navigation principale"><a href="../index.html" class="nav-link">← Classe</a><a href="index.html" class="nav-link is-active" aria-current="page">TP</a><a href="tuto.html" class="nav-link">1 · Tuto</a><a href="consigne.html" class="nav-link">2 · Consigne</a><a href="outil.html?ifc=fichiers/LKBIM-PPC-S02-TP01.ifc" class="nav-link">3 · Outil</a></nav>
+  </div>
+</header>
+<main>
+
+<section class="hero-band">
+  <div class="wrap hero-split">
+    <div class="hero-text">
+      <p class="eyebrow">Projet petite construction · Étude n°4 · Extraire des données BIM · 4 h</p>
+      <h1>Réaliser un quantitatif à partir d’un IFC</h1>
+      <p class="lead"><b>Situation professionnelle :</b> Vous êtes opérateur BIM dans votre entreprise et vous devez effectuer un quantitatif pour réaliser une étude de prix.</p>
+      <p class="problematique">« Comment extraire d’une maquette numérique un métré fiable, justifié et directement exploitable pour une étude de prix ? »</p>
+      <div class="actions"><a class="btn" href="tuto.html">Commencer par le tuto</a><a class="btn btn-ghost" href="outil.html?ifc=fichiers/LKBIM-PPC-S02-TP01.ifc">Ouvrir l’outil</a></div>
+    </div>
+    <figure class="planche">
+      <img src="../assets/img/maquette-3d.jpg" alt="Maquette numérique LKBIM-PPC-S02-TP01">
+      <figcaption><span class="mono">PL-01</span><span>La maquette fournie : LKBIM-PPC-S02-TP01.ifc</span></figcaption>
+    </figure>
+  </div>
+</section>
+<section class="wrap" style="margin-top:1.5rem">
+    <dl class="titleblock">
+      <div><dt>Activité</dt><dd>TP · Réaliser un quantitatif à partir d’un IFC</dd></div>
+      <div><dt>Durée</dt><dd>4 h</dd></div>
+      <div><dt>Modalité</dt><dd>Distanciel · TP évalué</dd></div>
+      <div><dt>Rendu</dt><dd>Un fichier Excel : une feuille par lot + captures</dd></div>
+    </dl>
+</section>
+<section class="wrap section">
+  <div class="section-head"><span class="section-num mono">01</span><h2>Les 4 étapes</h2></div>
+  <div class="steps4">
+<a class="step4" href="tuto.html"><span class="n">ÉTAPE 1 · 30 min · avant le TP</span><span class="t">Tuto découverte</span><span class="d">7 missions guidées pour prendre l’outil en main, puis votre attestation à imprimer en PDF.</span><span class="go">Commencer le tuto →</span></a>
+<a class="step4" href="consigne.html"><span class="n">ÉTAPE 2 · 10 min</span><span class="t">Lire la consigne</span><span class="d">Situation, lots à métrer, résultats attendus, critères de réussite, déroulé conseillé.</span><span class="go">Lire la consigne →</span></a>
+<a class="step4 is-key" href="outil.html?ifc=fichiers/LKBIM-PPC-S02-TP01.ifc"><span class="n">ÉTAPE 3 · 3 h 30</span><span class="t">Réaliser le métré</span><span class="d">L’outil s’ouvre dans le navigateur ; cliquez « Charger la maquette du TP ».</span><span class="go">Ouvrir l’outil →</span></a>
+<div class="step4"><span class="n">ÉTAPE 4 · fin du TP</span><span class="t">Rendre</span><span class="d">Exporter Excel, vérifier le fichier, le déposer avec votre attestation du tuto.</span><span class="go">Lien de dépôt communiqué par votre formateur</span></div>
+</div>
+</section>
+<section class="wrap section two-col">
+  <figure class="planche small-planche">
+    <img src="../assets/img/toiture-plan-h.jpg" alt="Vue en plan de la toiture">
+    <figcaption><span class="mono">PL-02</span><span>Vue en plan de la toiture : arêtiers, noues, faîtages, égouts</span></figcaption>
+  </figure>
+  <div class="note">
+    <div class="section-head"><span class="section-num mono">02</span><h2>Ce que vous livrez</h2></div>
+    <ul class="deliverables">
+      <li>Le fichier Excel exporté par l’outil : <b>une feuille par lot</b> (1 Gros œuvre, 2 Plâtrerie, 3 Toiture)</li>
+      <li>Un métré <b>exploitable</b> : ouvrages désignés, unités, arrondis, totaux</li>
+      <li>Les <b>captures d’écran</b> qui justifient chaque métré (intégrées au fichier)</li>
+      <li>L’<b>attestation</b> du tuto découverte en PDF</li>
+    </ul>
+  </div>
+</section>
+<section class="wrap section">
+  <div class="section-head"><span class="section-num mono">03</span><h2>Compétences évaluées</h2></div>
+  <div class="comps"><div class="comp"><p class="comp-code mono">C6.3</p><h3>Extraire des données d’une maquette numérique BIM</h3></div><div class="comp"><p class="comp-code mono">C7.1</p><h3>Préparer le quantitatif</h3></div><div class="comp"><p class="comp-code mono">C7.2</p><h3>Réaliser le quantitatif</h3></div></div>
+</section>
+<section class="wrap section">
+  <div class="section-head"><span class="section-num mono">04</span><h2>Fichiers</h2></div>
+  <ul class="dl-list">
+    <li><a href="outil.html?ifc=fichiers/LKBIM-PPC-S02-TP01.ifc"><span class="ext">HTML</span><span><b>Outil LKBIM Métré IFC</b><small>S’ouvre dans le navigateur, avec chargement de la maquette en un clic</small></span></a></li>
+    <li><a href="fichiers/LKBIM-PPC-S02-TP01.ifc" download><span class="ext">IFC</span><span><b>LKBIM-PPC-S02-TP01.ifc</b><small>La maquette (33 Mo), si vous préférez travailler hors ligne</small></span></a></li>
+    <li><a href="fichiers/LKBIM-PPC-S02-TP01.zip" download><span class="ext">ZIP</span><span><b>LKBIM-PPC-S02-TP01.zip</b><small>La même maquette compressée (6,5 Mo), pour une connexion lente</small></span></a></li>
+    <li><a href="outil.html" download="LKBIM-Metre-IFC.html"><span class="ext">HTML</span><span><b>LKBIM-Metre-IFC.html</b><small>L’outil à télécharger pour un usage hors ligne</small></span></a></li>
+    <li><a href="fichiers/LKBIM-PPC-S01-TP01-sujet.pdf" target="_blank"><span class="ext">PDF</span><span><b>Sujet du TP</b><small>Version imprimable de la consigne</small></span></a></li>
+  </ul>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <table class="cartouche" aria-label="Cartouche">
+      <tr><th>Classe</th><td>BTS MEC · Management économique de la construction</td><th>Année</th><td class="mono">2026-2027</td></tr>
+      <tr><th>Formateur</th><td>Kevin Lormeau · LKBIM</td><th>Unité</th><td class="mono">U61</td></tr>
+    </table>
+  </div>
+</footer>
+<script src="../assets/site.js?v=82925d70"></script>
+</body>
+</html>

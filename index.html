@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BTS MEC – site de la classe</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="assets/style.css?v=82925d70">
+<style>
+.steps4{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr));gap:1rem}
+.step4{display:flex;flex-direction:column;gap:.5rem;background:var(--sheet);border:2px solid var(--ink);padding:1rem 1.1rem;text-decoration:none;position:relative;box-shadow:5px 5px 0 var(--line)}
+.step4:hover{box-shadow:7px 7px 0 var(--line-strong);transform:translate(-1px,-1px)}
+.step4 .n{font-family:var(--font-mono);font-size:.8rem;color:var(--ink-soft)}
+.step4 .t{font-family:var(--font-display);font-size:1.6rem;font-weight:700;line-height:1.05}
+.step4 .d{font-size:.95rem;color:var(--ink-soft)}
+.step4 .go{margin-top:auto;font-weight:600;color:var(--u21)}
+.step4.is-key{background:var(--u21-tint)}
+.lots{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr));gap:1rem}
+.lot-card{background:var(--sheet);border:1px solid var(--line);border-top:4px solid var(--u21);padding:1rem 1.1rem}
+.lot-card:nth-child(2){border-top-color:var(--u22)}.lot-card:nth-child(3){border-top-color:var(--u23)}
+.lot-card h3{margin-bottom:.5rem}
+.horaire{width:100%;border-collapse:collapse;background:var(--sheet)}
+.horaire td{border-bottom:1px solid var(--line);padding:.55rem .7rem;vertical-align:top}
+.horaire td:first-child{font-family:var(--font-mono);white-space:nowrap;width:1%}
+.horaire td:nth-child(2){font-weight:600;white-space:nowrap}
+.alert{border-left:5px solid var(--u23);background:var(--u23-tint);padding:.8rem 1rem}
+.dl-list{list-style:none;padding:0;margin:0;display:grid;gap:.6rem}
+.dl-list a{display:flex;gap:.8rem;align-items:center;text-decoration:none;background:var(--sheet);border:1px solid var(--line);padding:.6rem .8rem}
+.dl-list a:hover{border-color:var(--ink)}
+.dl-list .ext{font-family:var(--font-mono);font-size:.75rem;font-weight:600;color:#fff;background:var(--ink);padding:.2rem .45rem;min-width:3.2rem;text-align:center}
+.dl-list small{display:block;color:var(--ink-soft)}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="index.html" class="brand">
+      <span class="brand-mark" aria-hidden="true">MEC</span>
+      <span class="brand-text"><strong>BTS MEC</strong><span>Management économique de la construction</span></span>
+    </a>
+    <nav class="nav" aria-label="Navigation principale"><a href="index.html" class="nav-link is-active" aria-current="page">Accueil</a><a href="quantitatif-ifc/index.html" class="nav-link">TP quantitatif IFC</a></nav>
+  </div>
+</header>
+<main>
+
+<section class="hero-band">
+  <div class="wrap hero-split">
+    <div class="hero-text">
+      <p class="eyebrow">Site de la classe · 2026-2027</p>
+      <h1>BTS MEC</h1>
+      <p class="hero-sub">Management économique de la construction</p>
+      <p class="lead">Consignes, outils, tutoriels et fichiers des TP : tout le travail de la classe est ici, accessible depuis n’importe quel ordinateur, en cours comme à distance.</p>
+      <div class="actions"><a class="btn" href="quantitatif-ifc/index.html">TP en cours : quantitatif IFC</a></div>
+    </div>
+    <figure class="planche">
+      <img src="assets/img/maquette-3d.jpg" alt="Maquette numérique du projet petite construction">
+      <figcaption><span class="mono">PL-00</span><span>Projet petite construction · maquette numérique</span></figcaption>
+    </figure>
+  </div>
+</section>
+<section class="wrap section">
+  <div class="section-head"><span class="section-num mono">01</span><h2>Projets et TP</h2></div>
+  <div class="projets"><a class="projet-card is-on" href="quantitatif-ifc/index.html">
+  <span class="projet-img"><img src="assets/img/toiture-plan-h.jpg" alt="Vue en plan de la toiture de la maquette" loading="lazy" style="object-fit:contain;background:#fff"><span class="statut is-on">En cours</span></span>
+  <span class="projet-body">
+    <span class="projet-num mono">PPC · ÉTUDE 04 · TP</span>
+    <span class="projet-title">Réaliser un quantitatif à partir d’un IFC</span>
+    <span class="projet-resume">Vous êtes opérateur BIM dans votre entreprise et vous devez effectuer un quantitatif pour réaliser une étude de prix.</span>
+    <span class="projet-meta"><span><b>Durée</b>4 h</span><span><b>Modalité</b>Distanciel · TP évalué</span><span><b>Compétences</b>C6.3 · C7.1 · C7.2</span></span>
+    <span class="btn projet-cta">Ouvrir le TP →</span>
+  </span>
+</a></div>
+</section>
+<section class="wrap section">
+  <div class="section-head"><span class="section-num mono">02</span><h2>Travailler à distance</h2></div>
+  <ul class="list">
+    <li>Un ordinateur avec <b>Chrome, Edge ou Firefox</b> à jour et une souris : aucun logiciel à installer.</li>
+    <li>Vos saisies restent dans le navigateur de votre poste : <b>sauvegardez</b> régulièrement et rendez vos fichiers avant l’heure limite.</li>
+    <li>Commencez toujours par le <b>tutoriel</b> du TP : il se termine par une attestation à imprimer en PDF.</li>
+  </ul>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <table class="cartouche" aria-label="Cartouche">
+      <tr><th>Classe</th><td>BTS MEC · Management économique de la construction</td><th>Année</th><td class="mono">2026-2027</td></tr>
+      <tr><th>Formateur</th><td>Kevin Lormeau · LKBIM</td><th>Unité</th><td class="mono">U61</td></tr>
+    </table>
+  </div>
+</footer>
+<script src="assets/site.js?v=82925d70"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Consigne · Réaliser un quantitatif à partir d’un IFC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="../assets/style.css?v=82925d70">
+<style>
+.steps4{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,15rem),1fr));gap:1rem}
+.step4{display:flex;flex-direction:column;gap:.5rem;background:var(--sheet);border:2px solid var(--ink);padding:1rem 1.1rem;text-decoration:none;position:relative;box-shadow:5px 5px 0 var(--line)}
+.step4:hover{box-shadow:7px 7px 0 var(--line-strong);transform:translate(-1px,-1px)}
+.step4 .n{font-family:var(--font-mono);font-size:.8rem;color:var(--ink-soft)}
+.step4 .t{font-family:var(--font-display);font-size:1.6rem;font-weight:700;line-height:1.05}
+.step4 .d{font-size:.95rem;color:var(--ink-soft)}
+.step4 .go{margin-top:auto;font-weight:600;color:var(--u21)}
+.step4.is-key{background:var(--u21-tint)}
+.lots{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,18rem),1fr));gap:1rem}
+.lot-card{background:var(--sheet);border:1px solid var(--line);border-top:4px solid var(--u21);padding:1rem 1.1rem}
+.lot-card:nth-child(2){border-top-color:var(--u22)}.lot-card:nth-child(3){border-top-color:var(--u23)}
+.lot-card h3{margin-bottom:.5rem}
+.horaire{width:100%;border-collapse:collapse;background:var(--sheet)}
+.horaire td{border-bottom:1px solid var(--line);padding:.55rem .7rem;vertical-align:top}
+.horaire td:first-child{font-family:var(--font-mono);white-space:nowrap;width:1%}
+.horaire td:nth-child(2){font-weight:600;white-space:nowrap}
+.alert{border-left:5px solid var(--u23);background:var(--u23-tint);padding:.8rem 1rem}
+.dl-list{list-style:none;padding:0;margin:0;display:grid;gap:.6rem}
+.dl-list a{display:flex;gap:.8rem;align-items:center;text-decoration:none;background:var(--sheet);border:1px solid var(--line);padding:.6rem .8rem}
+.dl-list a:hover{border-color:var(--ink)}
+.dl-list .ext{font-family:var(--font-mono);font-size:.75rem;font-weight:600;color:#fff;background:var(--ink);padding:.2rem .45rem;min-width:3.2rem;text-align:center}
+.dl-list small{display:block;color:var(--ink-soft)}
+</style>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a href="../index.html" class="brand">
+      <span class="brand-mark" aria-hidden="true">MEC</span>
+      <span class="brand-text"><strong>BTS MEC</strong><span>Management économique de la construction</span></span>
+    </a>
+    <nav class="nav" aria-label="Navigation principale"><a href="../index.html" class="nav-link">← Classe</a><a href="index.html" class="nav-link">TP</a><a href="tuto.html" class="nav-link">1 · Tuto</a><a href="consigne.html" class="nav-link is-active" aria-current="page">2 · Consigne</a><a href="outil.html?ifc=fichiers/LKBIM-PPC-S02-TP01.ifc" class="nav-link">3 · Outil</a></nav>
+  </div>
+</header>
+<main>
+
+<section class="hero-band">
+  <div class="wrap hero-split">
+    <div class="hero-text">
+      <p class="eyebrow">Projet petite construction · Étude n°4 · Extraire des données BIM · Consigne</p>
+      <h1>Consigne du TP</h1>
+      <p class="lead"><b>Situation professionnelle :</b> Vous êtes opérateur BIM dans votre entreprise et vous devez effectuer un quantitatif pour réaliser une étude de prix.</p>
+      <p class="lead"><b>On vous donne :</b> la maquette numérique <span class="mono">LKBIM-PPC-S02-TP01.ifc</span>.</p>
+      <div class="actions"><a class="btn" href="outil.html?ifc=fichiers/LKBIM-PPC-S02-TP01.ifc">Ouvrir l’outil</a><a class="btn btn-ghost" href="fichiers/LKBIM-PPC-S01-TP01-sujet.pdf" target="_blank">Sujet en PDF</a></div>
+    </div>
+    <figure class="planche">
+      <a href="fichiers/LKBIM-PPC-S01-TP01-sujet.pdf" target="_blank"><img src="../assets/img/sujet-p1.jpg" alt="Première page du sujet"></a>
+      <figcaption><span class="mono">PDF</span><span>Le sujet original (cliquer pour ouvrir)</span></figcaption>
+    </figure>
+  </div>
+</section>
+<section class="wrap section">
+  <div class="section-head"><span class="section-num mono">01</span><h2>On vous demande</h2></div>
+  <p class="section-lead">À l’aide de la maquette numérique, réaliser le quantitatif des lots suivants.</p>
+  <div class="lots"><div class="lot-card"><p class="comp-code mono">LOT 1</p><h3>Gros œuvre</h3><ul class="checks"><li>Calculer le volume des semelles filantes</li><li>Calculer la surface des différents types de murs (soubassement, élévations, etc.)</li><li>Calculer le volume des dalles béton</li><li>Calculer le volume des escaliers</li></ul></div><div class="lot-card"><p class="comp-code mono">LOT 2</p><h3>Plâtrerie</h3><ul class="checks"><li>Calculer la surface de doublage</li><li>Calculer la surface de cloison</li><li>Calculer la surface des plafonds</li></ul></div><div class="lot-card"><p class="comp-code mono">LOT 3</p><h3>Toiture</h3><ul class="checks"><li>Calculer la longueur des arêtiers</li><li>Calculer la longueur des noues</li><li>Calculer la longueur des faîtages</li><li>Calculer la longueur des lignes d’égout</li><li>Calculer la surface de couverture</li></ul></div></div>
+</section>
+<section class="wrap section two-col">
+  <div class="note">
+    <div class="section-head"><span class="section-num mono">02</span><h2>Résultats attendus</h2></div>
+    <ul class="deliverables"><li>Présenter <b>une feuille Excel par chapitre</b> (1 / 2 / 3).</li><li>Chaque feuille doit avoir un <b>métré exploitable</b>.</li></ul>
+  </div>
+  <div class="note">
+    <div class="section-head"><span class="section-num mono">03</span><h2>Critères de réussite</h2></div>
+    <ul class="checks"><li>Des arrondis justes</li><li>Des unités clairement exprimées</li><li>Des captures d’écran pour justifier vos métrés</li></ul>
+  </div>
+</section>
+<section class="wrap section">
+  <div class="section-head"><span class="section-num mono">04</span><h2>Compétences évaluées</h2></div>
+  <div class="comps"><div class="comp"><p class="comp-code mono">C6.3</p><h3>Extraire des données d’une maquette numérique BIM</h3></div><div class="comp"><p class="comp-code mono">C7.1</p><h3>Préparer le quantitatif</h3></div><div class="comp"><p class="comp-code mono">C7.2</p><h3>Réaliser le quantitatif</h3></div></div>
+</section>
+<section class="wrap section">
+  <div class="section-head"><span class="section-num mono">05</span><h2>Déroulé conseillé (4 h)</h2></div>
+  <table class="horaire"><tr><td>0 h 15</td><td>Préparer</td><td>Lire la consigne, ouvrir l’outil et la maquette, créer les chapitres et les ouvrages (unités, arrondis).</td></tr><tr><td>1 h 15</td><td>Lot 1 · Gros œuvre</td><td>Semelles, murs par type, dalles, escaliers. Nomenclatures et contrôle des doublons.</td></tr><tr><td>0 h 45</td><td>Lot 2 · Plâtrerie</td><td>Doublages, cloisons, plafonds.</td></tr><tr><td>1 h 00</td><td>Lot 3 · Toiture</td><td>Outil Arête pour arêtiers, noues, faîtages, égouts ; surface de couverture.</td></tr><tr><td>0 h 45</td><td>Contrôler et rendre</td><td>Mode Contrôle, captures titrées, export Excel, vérification du fichier, dépôt.</td></tr></table>
+  <p class="alert" style="margin-top:1rem"><b>Pensez-y :</b> cliquez « Sauvegarder » dans l’outil toutes les 30 minutes, et vérifiez votre fichier Excel avant de le déposer.</p>
+</section>
+</main>
+<footer class="site-footer">
+  <div class="wrap">
+    <table class="cartouche" aria-label="Cartouche">
+      <tr><th>Classe</th><td>BTS MEC · Management économique de la construction</td><th>Année</th><td class="mono">2026-2027</td></tr>
+      <tr><th>Formateur</th><td>Kevin Lormeau · LKBIM</td><th>Unité</th><td class="mono">U61</td></tr>
+    </table>
+  </div>
+</footer>
+<script src="../assets/site.js?v=82925d70"></script>
+</body>
+</html>
