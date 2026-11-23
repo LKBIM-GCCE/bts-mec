@@ -19,4 +19,6 @@ Consignes, outils, tutoriels et fichiers des TP de la classe de BTS Management �
 ## Publication
 Settings → Pages → branche `main`, dossier `/ (root)`.
 
+Charte graphique propre à la classe (`assets/style.css`) : celle du tuto LKBIM (bandeau bleu nuit, cartes blanches arrondies).
+
 ⚠ Dépôt public : ne jamais y placer de corrigé ni de grille de notation.
