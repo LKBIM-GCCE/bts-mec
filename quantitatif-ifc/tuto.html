@@ -4,6 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Tuto découverte — LKBIM Métré IFC</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+
 <script>
 /* ============ À PERSONNALISER PAR LE FORMATEUR ============
    Collez ici les liens de téléchargement (Drive, ENT, Google Site…).
@@ -39,7 +43,7 @@ nav.side .pg b{font-size:13px;color:var(--mut);font-weight:600}
 nav.side a{display:flex;align-items:center;gap:9px;padding:7px 10px;border-radius:8px;text-decoration:none;color:var(--ink);font-size:14px}
 nav.side a:hover{background:#f2f5f9}
 nav.side a.on{background:var(--soft);color:var(--acc2);font-weight:600}
-nav.side .dot{width:12px;height:12px;border-radius:50%;border:2px solid #c3ccd7;flex:none}
+nav.side .dot{width:12px;height:12px;border-radius:0;border:2px solid #c3ccd7;flex:none}
 nav.side a.ok .dot{background:var(--ok);border-color:var(--ok)}
 main{min-width:0}
 section.mission,section.card{background:#fff;border-radius:16px;padding:28px 32px;margin-bottom:26px;box-shadow:0 6px 24px rgba(20,30,50,.07)}
@@ -136,11 +140,11 @@ footer{text-align:center;color:var(--mut);font-size:13px;padding:0 0 40px}
 #certificate,.certA4{width:1000px;aspect-ratio:297/210;margin:0 auto;background:#fff;position:relative;box-shadow:0 10px 30px rgba(0,0,0,.15);font-family:Georgia,"Times New Roman",serif;color:#1f2a37}
 .c-in{position:absolute;inset:22px;border:3px solid #1f2a37;outline:1px solid #1f2a37;outline-offset:-10px;padding:40px 60px;display:flex;flex-direction:column;align-items:center;text-align:center}
 .c-top{display:flex;justify-content:space-between;width:100%;font-family:system-ui,sans-serif;font-size:13px;color:#64707e}
-.c-brand{font-weight:800;color:#1d4ed8;letter-spacing:1px;font-size:15px}
+.c-brand{font-weight:800;color:#2f7a55;letter-spacing:1px;font-size:15px}
 .c-title{font-size:52px;letter-spacing:6px;margin:22px 0 0;font-weight:700}
 .c-sub{font-size:20px;font-style:italic;color:#475569;margin:2px 0 22px}
 .c-txt{font-size:18px;margin:4px 0}
-.c-name{font-size:40px;font-weight:700;color:#1d4ed8;margin:8px 0 2px;border-bottom:2px solid #cbd5e1;padding:0 30px 4px;min-width:420px}
+.c-name{font-size:40px;font-weight:700;color:#2d5f8f;margin:8px 0 2px;border-bottom:2px solid #cbd5e1;padding:0 30px 4px;min-width:420px}
 .c-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin:24px 0 0;width:100%;font-family:system-ui,sans-serif;border:1px solid #cbd5e1;border-radius:8px;overflow:hidden}
 .c-grid div{padding:10px 8px;border-right:1px solid #cbd5e1}
 .c-grid div:last-child{border-right:0}
@@ -167,16 +171,87 @@ footer a{color:var(--mut)}
   body.printcert .certA4{width:297mm;height:210mm;aspect-ratio:auto;box-shadow:none;margin:0;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 }
 @page{size:A4 landscape;margin:0}
+
+/* ===== Charte du site de classe (planche de projet) ===== */
+:root{--paper:#f3f5f4;--sheet:#fff;--ink:#1d2630;--ink-soft:#55616c;--line:#d3d9dc;--line-strong:#9aa6ad;--u21:#2d5f8f;--u22:#2f7a55;--u23:#a96a14;--u21-tint:#e6eef6;--u22-tint:#e5f1ea;--u23-tint:#f6ecdc;--grid:rgba(29,38,48,.045);--grid-strong:rgba(29,38,48,.08);
+  --acc:var(--u22);--acc2:#24603f;--soft:var(--u22-tint);--mut:var(--ink-soft);--bg:var(--paper);--ok:#2f7a55;--or:#c2410c;
+  --fd:"Barlow Condensed","Arial Narrow","Roboto Condensed",sans-serif;--fb:"IBM Plex Sans","Segoe UI",system-ui,sans-serif;--fm:"IBM Plex Mono",Consolas,ui-monospace,monospace}
+body{font-family:var(--fb);background-color:var(--paper);color:var(--ink);
+  background-image:linear-gradient(var(--grid-strong) 1px,transparent 1px),linear-gradient(90deg,var(--grid-strong) 1px,transparent 1px),linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);
+  background-size:100px 100px,100px 100px,20px 20px,20px 20px}
+h1,h2,h3,.mh h2,.bravo h2{font-family:var(--fd);font-weight:600;letter-spacing:0}
+.site-header{background:var(--sheet);border-bottom:1px solid var(--line)}
+.header-inner{max-width:1180px;margin:0 auto;padding:.7rem 20px;display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;color:var(--ink)}
+.brand-mark{display:grid;place-items:center;width:2.4rem;height:2.4rem;border:2px solid var(--ink);font-family:var(--fm);font-weight:500;font-size:.8rem}
+.brand-text{display:flex;flex-direction:column;line-height:1.15}.brand-text strong{font-family:var(--fd);font-size:1.3rem;font-weight:700}.brand-text span{font-size:.8rem;color:var(--ink-soft)}
+.snav{display:flex;gap:.25rem;flex-wrap:wrap}.snav a{text-decoration:none;color:var(--ink);padding:.4rem .75rem;font-weight:500;font-size:.95rem;border-bottom:3px solid transparent}
+.snav a:hover{border-bottom-color:var(--line-strong)}.snav a.on{border-bottom-color:var(--ink)}
+.hero{background:var(--sheet);color:var(--ink);border-bottom:2px solid var(--ink);padding:40px 24px 56px}
+.hero:after{display:none}
+.kicker{background:none;padding:0;border-radius:0;font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--ink-soft);font-weight:500}
+.hero h1{font-size:clamp(2.6rem,6vw,3.8rem);line-height:1.02;margin:10px 0 12px}
+.hero p{opacity:1;color:var(--ink);font-size:1.12rem}
+.chips span{border-radius:0;box-shadow:none;border:1px solid var(--ink);font-family:var(--fm);font-weight:500;font-size:.85rem;background:var(--sheet)}
+.layout{margin-top:-24px}
+nav.side,section.mission,section.card{border-radius:0;border:2px solid var(--ink);box-shadow:8px 8px 0 var(--grid-strong)}
+nav.side a{border-radius:0}nav.side a.on{background:var(--u22-tint);color:var(--ink);box-shadow:inset 4px 0 0 var(--acc)}
+.bar{border-radius:0}.bar i{background:var(--acc)}
+.mnum{border-radius:0;background:var(--acc);box-shadow:none;font-family:var(--fm);font-weight:500}
+.mh{border-bottom:1px solid var(--ink);padding-bottom:.7rem}
+.mh h2{font-size:2rem}
+.mh .done{border-radius:0;border:1px solid var(--line-strong);background:var(--sheet)}
+.mh .done:has(input:checked){background:var(--u22-tint);color:var(--acc2);border-color:var(--acc)}
+.steps li:before{border-radius:0;background:var(--ink);color:#fff;font-family:var(--fm);font-weight:500}
+.steps li:not(:last-child):after{background:var(--line)}
+.ui,.kbd{border-radius:0}
+.frame{border-radius:0;box-shadow:none;border:2px solid var(--ink);outline:none}
+figure.shot{position:relative}
+.box{border-radius:0;border-color:var(--u23);box-shadow:0 0 0 3px rgba(169,106,20,.18)}
+.box .badge,.legend .num{border-radius:0;background:var(--u23);font-family:var(--fm)}
+.frame.hl .box.on{background:rgba(169,106,20,.14);box-shadow:0 0 0 4px rgba(169,106,20,.35)}
+.legend li:hover{background:var(--u23-tint)}
+figcaption{font-family:var(--fm);font-size:.78rem;text-align:left;border:1px solid var(--ink);border-top:0;padding:.35rem .6rem;margin:0;background:var(--sheet)}
+.quiz{border-radius:0;border:1px solid var(--ink);border-left:6px solid var(--u21);background:var(--sheet)}
+.quiz.good{border-color:var(--acc);border-left-color:var(--acc);background:var(--u22-tint)}
+.quiz.bad{border-left-color:#b42318}
+.qi{border-radius:0;background:var(--u21);font-family:var(--fm)}
+.quiz.good .qi{background:var(--acc)}
+.qrow input,button.check,.opt{border-radius:0}
+button.check{background:var(--acc);border-color:var(--acc)}
+.opt.right{background:var(--u22-tint);border-color:var(--acc);color:var(--acc2)}
+.tip{border-radius:0;background:var(--sheet);border:1px solid var(--line);border-left:4px solid var(--ink-soft)}
+.warn{border-radius:0;background:var(--u23-tint);border:1px solid var(--u23);border-left:6px solid var(--u23)}
+.mini{border-radius:0;border:1px solid var(--ink)}
+.dlc{border-radius:0;border:1px solid var(--ink)}a.dlc:hover{box-shadow:6px 6px 0 var(--grid-strong);border-color:var(--ink)}
+.dlc .fi{border-radius:0}
+.req span{border-radius:0;border:1px solid var(--line-strong);background:var(--sheet)}
+.bravo{border-radius:0;background:var(--u22-tint);border:2px solid var(--acc)}
+.rail div{border-radius:0;border:1px solid var(--ink);border-top:5px solid var(--acc);background:var(--sheet)}
+.rail span{border-radius:0;background:var(--ink);font-family:var(--fm);font-weight:500}
+.faq details{border-radius:0;border:1px solid var(--ink)}
+.locked{border-radius:0;border:2px dashed var(--line-strong);background:var(--sheet)}
+.idrow input{border-radius:0}
+.certwrap{border-radius:0;background:var(--paper);border:1px solid var(--line)}
+#modal .mb{border-radius:0;border:2px solid var(--ink)}
+#modal input{border-radius:0}
+footer{font-family:var(--fm);font-size:.75rem}
+@media print{body{background-image:none}}
+
 @media (max-width:980px){.layout{grid-template-columns:1fr}nav.side{position:static}.two{grid-template-columns:1fr}.rail{grid-template-columns:1fr 1fr}.cards3{grid-template-columns:1fr 1fr}.dl{grid-template-columns:1fr}.hero h1{font-size:32px}}
 @media print{nav.side,.zoom,.hero:after{display:none}.layout{display:block;margin:0}section.mission{break-inside:avoid-page;box-shadow:none;border:1px solid #ddd}}
 </style>
 </head>
 <body>
+<header class="site-header"><div class="header-inner">
+  <a class="brand" href="index.html" data-site="1"><span class="brand-mark" aria-hidden="true">MEC</span><span class="brand-text"><strong>BTS MEC</strong><span>Management économique de la construction</span></span></a>
+  <nav class="snav" data-site="1" style="display:none"><a href="../index.html">← Classe</a><a href="index.html">TP</a><a href="tuto.html" class="on">1 · Tuto</a><a href="consigne.html">2 · Consigne</a><a href="outil.html?ifc=fichiers/LKBIM-PPC-S02-TP01.ifc">3 · Outil</a></nav>
+</div></header>
 <header class="hero"><div class="in">
   <span class="kicker">BTS MEC · U61 · Étude n°4 — Extraire des données BIM</span>
   <h1>Tuto découverte<br>LKBIM Métré IFC</h1>
   <p>Prenez en main l’outil de métré en 7 missions guidées, avant le TP noté « Réaliser un quantitatif à partir d’un IFC ». Chaque mission se vérifie toute seule.</p>
-  <div class="chips"><span>⏱ 30 minutes</span><span>🧩 7 missions</span><span>✅ Réponses auto-vérifiées</span><span>💻 Sans installation</span></div>
+  <div class="chips"><span>30 min</span><span>7 missions</span><span>Réponses auto-vérifiées</span><span>Attestation PDF</span></div>
 </div></header>
 
 <div class="layout">
@@ -337,6 +412,8 @@ footer a{color:var(--mut)}
     ['sujet','Sujet du TP','Le sujet (à lire avant de commencer le TP)','PDF','#dc2626'],
     ['depot','Dépôt du rendu','Où déposer votre fichier Excel','⬆','#7c3aed']];
   document.getElementById('dl').innerHTML=files.map(([k,n,d,t,c])=>{const u=LIENS[k];const tag=u?'a':'div';return `<${tag} class="dlc" ${u?`href="${u}" target="_blank" rel="noopener"`:''}><span class="fi" style="background:${c}">${t}</span><span><b>${n}</b><small>${u?d+' — <u>ouvrir le lien</u>':d+' — fourni par votre formateur'}</small></span></${tag}>`;}).join('');
+  if(location.protocol.startsWith('http')) document.querySelectorAll('[data-site]').forEach(e=>e.style.display='');
+  else document.querySelectorAll('a.brand[data-site]').forEach(a=>a.removeAttribute('href'));
   if(location.protocol.startsWith('http')) document.querySelectorAll('.online-only').forEach(e=>e.style.display='block');
   // stockage
   const KEY='lkbim-tuto-v1'; let st={};
