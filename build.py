@@ -24,7 +24,7 @@ e = html.escape
 # LIENS — coller ici les liens externes (laisser "" si pas prêt)
 # =====================================================================
 LIENS = {
-    "depot": "",   # dossier / espace de dépôt des rendus (Classroom, Moodle, Drive…)
+    "depot": "https://drive.google.com/drive/folders/1_IP0Fx73pk9LbZJgUjIxPUrG3BdJcY0Y?usp=drive_link",   # dossier / espace de dépôt des rendus (Classroom, Moodle, Drive…)
 }
 
 CLASSE = {"titre": "BTS MEC", "sous_titre": "Management économique de la construction", "annee": "2026-2027"}
